@@ -9,4 +9,4 @@ This project is compiled using .Net Core 3.1 which allows for cross platform com
 https://dotnet.microsoft.com/download/dotnet-core/3.1
 
 You can download the latest compiled application for your platform below:
-https://github.com/BlakeHastings/ASM/releases/tag/1.0.0
+https://github.com/BlakeHastings/ASM/releases/tag/1.0.1
