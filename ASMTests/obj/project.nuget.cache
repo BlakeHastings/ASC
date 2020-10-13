@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g5ei2Z0AURmVoYE453jXDLemuk8KGcZZfybtOVZtP/lwMW/HtgkygREQV6N/dwhT6ehFK9chI76hXa7cpJruAA==",
+  "dgSpecHash": "HgPpCxbqYx/T9tqzcYhFpmVKBvyPKuiwoA3ETIJLAvt3kdgTbz87bZN2r/13thRN3LjjKc4FK9yg+fQdP44N5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASMTests\\ASMTests.csproj",
+  "projectFilePath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASMTests\\ASMTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Blake\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

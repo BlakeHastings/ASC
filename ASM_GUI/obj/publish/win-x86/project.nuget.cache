@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UK/P/bL3Sb+od6LyX3ZQPHhv909JqVLKAC1uAQjNdFP/9FbltD5K3oK1/V/R/VhDgJlnbu4vjNwK8Okf/Uip+A==",
+  "dgSpecHash": "mEotsStiDJoM6XdWATUL8/omvBBW/qDcpdtDruLkrisevTZ/c2/0C76zKVR5LBCj3mfhxTO84+Ocvq5YblunkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Blake\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.8\\microsoft.netcore.app.runtime.win-x86.3.1.8.nupkg.sha512",
+    "C:\\Users\\Blake\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.8\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.8.nupkg.sha512",
+    "C:\\Users\\Blake\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.8\\microsoft.aspnetcore.app.runtime.win-x86.3.1.8.nupkg.sha512"
+  ],
   "logs": []
 }

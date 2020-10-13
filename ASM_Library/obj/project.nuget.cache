@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CweukaAXMflp1YGFc9jjG9cmwyVQncHhS265AXDVoybcoMhlInzf4cOG+ra7uRSCE317f9Aeydkkf2QSRl78Ww==",
+  "dgSpecHash": "glOQxyCX95ncj17KBXL1w6oJN+v8/xjIsgfOvmsD+BGkbkG8zYF3W20C3b48Pc9SGdFWpIzerC56NVjeEkg8OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj",
+  "projectFilePath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_Library\\ASM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Blake\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

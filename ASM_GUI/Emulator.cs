@@ -133,12 +133,23 @@ namespace ASM_GUI
                 filePath = openFileDialog1.FileName;
                 directory = Path.GetDirectoryName(filePath);
                 fileName = Path.GetFileNameWithoutExtension(filePath);
-                richTextBox1.Text = File.ReadAllText(filePath);
+                
 
                 if (File.Exists(directory + "\\" + fileName + ".obj"))
                 {
+                    richTextBox1.Text = File.ReadAllText(filePath);
                     pl.LoadFromFile(directory + "\\" + fileName + ".obj", machine);
-                   
+
+                }
+                else
+                {
+                    using (Prompt dlg = new Prompt($"File Missing! \n{fileName}.obj\n  Assemble the .ASM file to produce!", "Okay!"))
+                    {
+                        if (dlg.ShowDialog() == DialogResult.OK)
+                        {
+
+                        }
+                    }
                 }
             }
         }

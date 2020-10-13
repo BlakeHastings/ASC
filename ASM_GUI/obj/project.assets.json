@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
+      "projectUniqueName": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
       "projectName": "ASM_GUI",
-      "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
+      "projectPath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
       "packagesPath": "C:\\Users\\Blake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\obj\\",
+      "outputPath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_GUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -57,8 +57,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj": {
-              "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj"
+            "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_Library\\ASM.csproj": {
+              "projectPath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_Library\\ASM.csproj"
             }
           }
         }
