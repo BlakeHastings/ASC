@@ -36,7 +36,7 @@ namespace ASM.Hardware_Components
 
         public void SetAddress(Hex index, string hexValue)
         {
-            SetAddress(index, hexValue);
+            SetAddress((int)index, hexValue);
         }
 
         public Hex GetAddress(Hex index)

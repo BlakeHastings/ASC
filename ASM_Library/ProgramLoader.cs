@@ -15,8 +15,8 @@ namespace ASM
             try
             {
                 string[] instructionList = ParseObjFile(path);
-                for (int i = 0; i < machine.memory.Size && i < instructionList.Length; i++)
-                    machine.memory.SetAddress(i, instructionList[i]);
+                for (int i = 1; i < machine.memory.Size && i < instructionList.Length; i+=2)
+                    machine.memory.SetAddress(new Hex(instructionList[i - 1]), instructionList[i]);
             }catch(Exception ex)
             {
                 throw (new Exception("Instruction set too large for memory to hold!"));
@@ -31,11 +31,6 @@ namespace ASM
                 string objFileString = File.ReadAllText(path);
                 objFileLines = objFileString.Split(new[] { "  ", "\n" }, StringSplitOptions.None).ToList<string>();
                 int pos = 0;
-                for (int i = 1; i < objFileLines.Count; i += 2, pos++)
-                {
-                    objFileLines[pos] = objFileLines[i];
-                }
-                objFileLines.RemoveRange(pos, objFileLines.Count - pos);
             }
             catch(Exception ex)
             {

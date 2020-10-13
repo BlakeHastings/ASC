@@ -11,6 +11,8 @@ namespace ASM.Hardware_Components
 
         public void setValue(Hex hexValue)
         {
+            if(hexValue == null)
+                throw new Exception("ACC: invalid hexValue. Hex cannot be null! Something is wrong!");
             if (hexValue.ToString().Length > 4)
                 throw new Exception("ACC: invalid hexValue");
             if (hexValue.ToString().Length < 4)

@@ -63,7 +63,7 @@
         }
       },
       "runtimes": {
-        "linux-x64": {
+        "win-x86": {
           "#import": []
         }
       }
