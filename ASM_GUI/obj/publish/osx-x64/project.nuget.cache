@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RIP1iQs43cnjDJMa1ZTTXRFTiKYX9y8szKqjbYVRwFNQwmMYqqSLmlJ2YBHjjW43W8s48sZWfGT7W3lL0Ckxpw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Blake\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\3.1.8\\microsoft.netcore.app.host.osx-x64.3.1.8.nupkg.sha512"
+  ],
+  "logs": []
+}

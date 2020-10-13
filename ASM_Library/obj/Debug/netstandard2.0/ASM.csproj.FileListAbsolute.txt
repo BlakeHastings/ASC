@@ -7,3 +7,11 @@ C:\Users\Blake\source\repos\ASM\ASM_Library\obj\Debug\netstandard2.0\ASM.csproj.
 C:\Users\Blake\source\repos\ASM\ASM_Library\obj\Debug\netstandard2.0\ASM.dll
 C:\Users\Blake\source\repos\ASM\ASM_Library\obj\Debug\netstandard2.0\ASM.pdb
 C:\Users\Blake\source\repos\ASM\ASM_Library\obj\Debug\netstandard2.0\ASM.csprojAssemblyReference.cache
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\bin\Debug\netstandard2.0\ASM.deps.json
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\bin\Debug\netstandard2.0\ASM.dll
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\bin\Debug\netstandard2.0\ASM.pdb
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\obj\Debug\netstandard2.0\ASM.AssemblyInfoInputs.cache
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\obj\Debug\netstandard2.0\ASM.AssemblyInfo.cs
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\obj\Debug\netstandard2.0\ASM.csproj.CoreCompileInputs.cache
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\obj\Debug\netstandard2.0\ASM.dll
+C:\Users\Blake\Source\Repos\ASM2\ASM_Library\obj\Debug\netstandard2.0\ASM.pdb
