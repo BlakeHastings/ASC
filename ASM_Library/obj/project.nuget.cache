@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "glOQxyCX95ncj17KBXL1w6oJN+v8/xjIsgfOvmsD+BGkbkG8zYF3W20C3b48Pc9SGdFWpIzerC56NVjeEkg8OQ==",
+  "dgSpecHash": "iFGhD5CsRfoj1EkAqRkBBPgaCc6XWK0/o827W0H/F5UXErZ0DEmws3SNUkoqW1j1zposU07hP6MU3gTr2O+Wtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blake\\source\\repos\\ASM2\\ASM_Library\\ASM.csproj",
+  "projectFilePath": "C:\\Users\\Blake\\Source\\repos\\ASC\\ASM_Library\\ASM.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Blake\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Blake\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

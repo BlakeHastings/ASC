@@ -1,0 +1,33 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ASM_GUI.MainWindow"
+        Title="ASM_GUI">
+
+	<Grid ColumnDefinitions="2*,*" RowDefinitions="*" ShowGridLines="True">
+		<TextBox Name="codeEditor" Grid.Column="0" Grid.Row="0" AcceptsTab="False" TextWrapping="NoWrap" AcceptsReturn="True">
+			
+		</TextBox>
+		<Grid Grid.Column="1" ColumnDefinitions="*" RowDefinitions="30,*,*" ShowGridLines="True">
+			<Panel Name="registers-panel" Grid.Row="1">
+				
+			</Panel>
+			<Panel Grid.Row="2" Name="memory">
+				<StackPanel >
+					
+				</StackPanel>
+			</Panel>
+			
+		</Grid>
+		
+	</Grid>
+	
+	
+	<Window.Styles>
+		<Style Selector="Panel.memory">
+			<Setter Property="Foreground" Value="Red"/>
+		</Style>
+	</Window.Styles>
+</Window>
