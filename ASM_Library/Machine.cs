@@ -2,21 +2,48 @@
 using ASM.Opcode_Instructions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ASM.Hardware_Components
 {
-    public class Machine
+    public class Machine : HardwareBase
     {
+
         public Action GetInput;
         public Action<Hex> RecieveOutput;
         public Action EndOfProgram;
-        public ACC acc { get; } = new ACC();
-        public Memory memory { get; } = new Memory();
-        public Register[] registers { get; } = { new Register(), new Register(), new Register() };
-        public Hex InputBuffer { get; set; }
-        public Hex OutputBuffer { get; set; } 
+
+        #region private fields
+        private ACC _acc = new ACC();
+        private Memory _memory = new Memory();
+        private Register[] _registers = { new Register(), new Register(), new Register() };
+        private Hex _InputBuffer;
+        private Hex _OutputBuffer;
+        #endregion
+
+        public ACC acc { 
+            get { return _acc; }
+            private set { _acc = value; NotifyPropertyChanged(); } }
+        public Memory memory {
+            get { return _memory; }
+            private set { _memory = value; NotifyPropertyChanged(); } }
+        public Register[] registers {
+            get { return _registers; }
+            private set { _registers = value; NotifyPropertyChanged(); } }
+
+        public Hex InputBuffer {
+            get { return _InputBuffer; }
+            set { _InputBuffer = value; NotifyPropertyChanged(); } }
+
+        public Hex OutputBuffer {
+            get { return _OutputBuffer; }
+            set { _OutputBuffer = value; NotifyPropertyChanged(); } } 
+
         public Dictionary<int, OpcodeInstructionBase> supportedOpcodeInstructions = new Dictionary<int, OpcodeInstructionBase>();
+
+
 
         public Machine()
         {
@@ -57,5 +84,8 @@ namespace ASM.Hardware_Components
             EndOfProgram.Invoke();
             memory.BufferIndex = new Hex(0);
         }
+
+        
+
     }
 }

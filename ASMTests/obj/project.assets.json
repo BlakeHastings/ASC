@@ -5733,37 +5733,37 @@
   },
   "packageFolders": {
     "C:\\Users\\Blake\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Blake\\Source\\repos\\ASC\\ASMTests\\ASMTests.csproj",
+      "projectUniqueName": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASMTests\\ASMTests.csproj",
       "projectName": "ASMTests",
-      "projectPath": "C:\\Users\\Blake\\Source\\repos\\ASC\\ASMTests\\ASMTests.csproj",
+      "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASMTests\\ASMTests.csproj",
       "packagesPath": "C:\\Users\\Blake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Blake\\Source\\repos\\ASC\\ASMTests\\obj\\",
+      "outputPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASMTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Blake\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Blake\\Documents\\Work\\Projects\\CommonProjects\\Nuget Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Blake\\Source\\repos\\ASC\\ASM_Library\\ASM.csproj": {
-              "projectPath": "C:\\Users\\Blake\\Source\\repos\\ASC\\ASM_Library\\ASM.csproj"
+            "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj": {
+              "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj"
             }
           }
         }
@@ -5809,7 +5809,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

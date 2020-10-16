@@ -2,32 +2,308 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" 
         x:Class="ASM_GUI.MainWindow"
-        Title="ASM_GUI">
+        Title="ASM_GUI"
+        Width="700"
+        Height="500">
 
-	<Grid ColumnDefinitions="2*,*" RowDefinitions="*" ShowGridLines="True">
-		<TextBox Name="codeEditor" Grid.Column="0" Grid.Row="0" AcceptsTab="False" TextWrapping="NoWrap" AcceptsReturn="True">
-			
-		</TextBox>
-		<Grid Grid.Column="1" ColumnDefinitions="*" RowDefinitions="30,*,*" ShowGridLines="True">
-			<Panel Name="registers-panel" Grid.Row="1">
-				
-			</Panel>
-			<Panel Grid.Row="2" Name="memory">
-				<StackPanel >
-					
-				</StackPanel>
-			</Panel>
-			
-		</Grid>
-		
+  
+  
+	<Grid ColumnDefinitions="2*,auto" RowDefinitions="*">
+
+
+  
+      <Grid ColumnDefinitions="*" RowDefinitions="auto,*" Grid.Column="0" Grid.Row="0">
+        <Menu Grid.Row="0">
+          <MenuItem Header="_File">
+            <MenuItem Header="Load">
+            </MenuItem>
+            <MenuItem Header="Save">
+            </MenuItem>
+            <MenuItem Header="Save As">
+            </MenuItem>
+          </MenuItem>
+          <MenuItem Header="_Run" Click="RunFile">
+
+          </MenuItem>
+          <MenuItem Header="_About">
+
+          </MenuItem>
+        </Menu>
+        
+        <TextBox Name="codeEditor" FontSize="15" Grid.Row="1"  AcceptsTab="True" TextWrapping="NoWrap" AcceptsReturn="True" FontFamily="Roboto Mono">
+
+        </TextBox>
+      </Grid>
+
+    
+    
+    <TabControl Grid.Column="1" Grid.Row="1" MinWidth="200">
+      <TabItem Header="Emulator">
+        <Grid  ColumnDefinitions="*" RowDefinitions="auto,*">
+      
+      <Border Classes="card" Grid.Row="0" Grid.Column="0">
+        <Panel Classes="registers">
+          
+          <StackPanel Orientation="Vertical">
+            
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">ACC</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1">
+                  <TextBlock Name="accValue_TextBlock" Classes="registerValue" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+
+            <Separator Classes="registerSeparater"></Separator>
+
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">Register 1</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1">
+                  <TextBlock Name="register1Value_TextBlock" Classes="registerValue" HorizontalAlignment="Center" ></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+
+            <Separator Classes="registerSeparater"></Separator>
+            
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">Register 2</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1">
+                  <TextBlock Name="register2Value_TextBlock" Classes="registerValue" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+            
+            <Separator Classes="registerSeparater"></Separator>
+            
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">Register 3</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1" >
+                  <TextBlock Name="register3Value_TextBlock" Classes="registerValue" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+
+            <Separator Classes="registerSeparater"></Separator>
+
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">Output</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1" >
+                  <TextBlock Name="outputValue_TextBlock" Classes="registerValue" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+
+            <Separator Classes="registerSeparater"></Separator>
+
+            <Panel Classes="register" >
+              <Grid Classes="registerGrid" ColumnDefinitions="2*,*" RowDefinitions="*">
+                <TextBlock Classes="registerLabel" Grid.Column="0" HorizontalAlignment="Center">Input</TextBlock>
+                <Border Classes="registerValueBorder" Grid.Column="1" >
+                  <TextBlock Name="inputValue_TextBlock" Classes="registerValue" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+              </Grid>
+            </Panel>
+            
+          </StackPanel>
+          
+        </Panel>
+
+
+      </Border>
+      
+      
+      <Border Classes="card" Grid.Row="1" Grid.Column="0">
+        <Panel>
+          <Grid RowDefinitions="auto,*">
+            <Border 
+              Grid.ColumnSpan="3"
+              Grid.Row="0"
+              Padding="10,5,10,5"
+              Background="Gray"
+              CornerRadius="18,18,0,0"
+              >
+              <Grid ColumnDefinitions="*,4,2*">
+                <TextBlock 
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  FontSize="14"
+                  FontWeight="DemiBold"
+                  >Address</TextBlock>
+                <TextBlock 
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  FontSize="14"
+                  FontWeight="DemiBold"
+                  >Data</TextBlock>
+              </Grid>
+            </Border>
+
+
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+              <StackPanel Name="memory" >
+
+                <ItemsRepeater Name="memoryRowRepeater" Background="Transparent" Items="{Binding MemoryItems}">
+                  <ItemsRepeater.ItemTemplate>
+                    <DataTemplate>
+                      <Panel>
+                        <Border Classes="memoryRow">
+                          <Grid ColumnDefinitions="*,4,2*">
+
+                            <Border Grid.Column="0">
+                              <TextBlock Classes="memoryRowLabel" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Address}"></TextBlock>
+                            </Border>
+                            <GridSplitter Grid.Column="1" Width="10" >
+                              <GridSplitter.Template>
+                                <ControlTemplate TargetType="{x:Type GridSplitter}">
+                                  <Grid>
+                                    <Rectangle Fill="Gray" Opacity="0.2" Width="1" />
+                                  </Grid>
+                                </ControlTemplate>
+                              </GridSplitter.Template>
+                            </GridSplitter>
+                            <Border Grid.Column="2">
+                              <TextBlock Classes="memoryRowValue" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Data}">0000</TextBlock>
+                            </Border>
+                          </Grid>
+                        </Border>
+
+                        <Separator Classes="memoryRowSeparator"></Separator>
+                      </Panel>
+                    </DataTemplate>
+                  </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+
+        </Panel>
+
+        
+        
+
+      </Border>
+
+
+    </Grid>
+      </TabItem>
+      
+      <TabItem Header="Settings">
+        
+        <StackPanel Orientation="Vertical" Margin="10">
+          <Grid ColumnDefinitions="2*,*" >
+            <TextBlock VerticalAlignment="Center">Number Base</TextBlock>
+            <ComboBox Grid.Column="1" Name="displayBase_ComboBox" SelectionChanged="ComboBox_SelectionChanged">
+              <!--Populated in code-->
+            </ComboBox>
+            
+          </Grid>
+          <Button Name="LoadFile_Button" IsEnabled="True">Load File</Button>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock>Font Size</TextBlock>
+            <NumericUpDown Value="{Binding fontSize}"></NumericUpDown>
+          </StackPanel>
+
+        </StackPanel>
+        
+      </TabItem>
+    </TabControl>
+    
 	</Grid>
 	
 	
 	<Window.Styles>
-		<Style Selector="Panel.memory">
-			<Setter Property="Foreground" Value="Red"/>
-		</Style>
+    <Style Selector="TextBox">
+      <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+    
+    <Style Selector="Border.card">
+      <Setter Property="CornerRadius" Value="18,18,18,18"></Setter>
+      <Setter Property="Background" Value="WhiteSmoke"/>
+      <Setter Property="Margin" Value="5"></Setter>
+      <Setter Property="BorderBrush" Value="Gray"></Setter>
+      <Setter Property="BorderThickness" Value="0.5"></Setter>
+      
+    </Style>
+
+    <Style Selector="TextBlock.tempLabel">
+      <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style Selector="Panel.registers">
+      
+    </Style>
+    
+    <Style Selector="Panel.register">
+      <Setter Property="Margin" Value="10"></Setter>
+      
+    </Style>
+
+    <Style Selector="TextBlock.registerLabel">
+      <Setter Property="FontSize" Value="14"></Setter>
+      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+
+    </Style>
+
+    <Style Selector="TextBlock.registerValue">
+      <Setter Property="FontSize" Value="15"></Setter>
+      <Setter Property="FontWeight" Value="600"></Setter>
+      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+      <Setter Property="MinHeight" Value="20"></Setter>
+    </Style>
+
+    <Style Selector="Border.registerValueBorder">
+      <Setter Property="BorderBrush" Value="Gray"></Setter>
+      <Setter Property="BorderThickness" Value="0.5"></Setter>
+      <Setter Property="CornerRadius" Value="100"></Setter>
+      <Setter Property="Padding" Value="5"></Setter>
+      <Setter Property="Background" Value="White"></Setter>
+      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style Selector="Separator.registerSeparater">
+      <Setter Property="BorderBrush" Value="Gray"></Setter>
+      <Setter Property="BorderThickness" Value="0.5"></Setter>
+      <Setter Property="Opacity" Value="0.1"></Setter>
+      <Setter Property="Margin" Value="20,0,20,0"></Setter>
+    </Style>
+    
 	</Window.Styles>
+
+  <Window.Styles>
+    <Style Selector="StackPanel.memory">
+     
+    </Style>
+    <Style Selector="Border.memoryRow">
+      <Setter Property="Padding" Value="10,5,10,5"></Setter>
+      <Setter Property="BorderThickness" Value="0"></Setter>
+      <Setter Property="ClipToBounds" Value="true"></Setter>
+    </Style>
+
+    <Style Selector="TextBlock.memoryRowLabel">
+      <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+
+    <Style Selector="TextBlock.memoryRowValue">
+      <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+    
+    <Style Selector="Separator.memoryRowSeparator">
+      <Setter Property="BorderBrush" Value="Gray"></Setter>
+      <Setter Property="BorderThickness" Value="0.5"></Setter>
+      <Setter Property="Opacity" Value="0.1"></Setter>
+      <Setter Property="Margin" Value="5,0,5,0"></Setter>
+    </Style>
+    
+    
+  </Window.Styles>
 </Window>

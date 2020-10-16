@@ -5,9 +5,10 @@ using System.Text;
 
 namespace ASM.Hardware_Components
 {
-    public class Register
+    public class Register : HardwareBase
     {
-        public Hex Value { get; private set; } = new Hex("0000");
+        private Hex _Value = new Hex("0000");
+        public Hex Value { get { return _Value; } private set { _Value = value; NotifyPropertyChanged(); } }
 
         public void SetValue(Hex hexValue)
         {

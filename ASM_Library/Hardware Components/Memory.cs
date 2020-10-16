@@ -5,10 +5,11 @@ using System.Text;
 
 namespace ASM.Hardware_Components
 {
-    public class Memory
+    public class Memory : HardwareBase
     {
         public event EventHandler<int> AddressValueChanged;
         private Hex[] _mem { get; } = new Hex[255];
+        
         private Hex _BufferIndex;
         public Hex BufferIndex {
             get
@@ -19,8 +20,10 @@ namespace ASM.Hardware_Components
                 if (value > 255 || value < 0)
                     throw new Exception($"Invalid memory index supplied to buffer: {value}");
                 _BufferIndex = new Hex(value);
+                NotifyPropertyChanged();
             } 
         } 
+       
         public int Size = 255;
 
         public Memory()
