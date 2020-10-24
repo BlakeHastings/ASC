@@ -1,40 +1,70 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
         x:Class="ASM_GUI.MainWindow"
         Title="ASM_GUI"
-        Width="700"
-        Height="500">
+        Width="800"
+        Height="900">
 
-  
-  
-	<Grid ColumnDefinitions="2*,auto" RowDefinitions="*">
-
-
-  
+  <Grid ColumnDefinitions="2*,auto" RowDefinitions="*">
       <Grid ColumnDefinitions="*" RowDefinitions="auto,*" Grid.Column="0" Grid.Row="0">
-        <Menu Grid.Row="0">
-          <MenuItem Header="_File">
-            <MenuItem Header="Load">
-            </MenuItem>
-            <MenuItem Header="Save">
-            </MenuItem>
-            <MenuItem Header="Save As">
-            </MenuItem>
-          </MenuItem>
-          <MenuItem Header="_Run" Click="RunFile">
 
-          </MenuItem>
-          <MenuItem Header="_About">
-
-          </MenuItem>
-        </Menu>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="37">
+          <Button Classes="menuBarButton" 
+                  Name="LoadFile_Button"
+                  IsEnabled="True"
+                  ToolTip.ShowDelay="{Binding #settings_toolTipDelay.Value}"
+                  ToolTip.Tip="Load in .ASM files with their .obj, and .lst.">Load</Button>
+          <Button Classes="menuBarButton"
+                  
+                  IsEnabled="False"
+                  ToolTip.ShowDelay="1000"
+                  ToolTip.Tip="Assemble the program and load it into memory to run.">Assemble</Button>
+          <Button Classes="menuBarButton"
+                  Click="Step"
+                  
+                  ToolTip.Tip="Emulate the next line of code and stop there.">Step</Button>
+          <Button Classes="menuBarButton" 
+                  Click="RunFile" 
+                  ToolTip.ShowDelay="1000"
+                  ToolTip.Tip="This will run through the entire program and notify you when finished.">Run</Button>
+        </StackPanel>
+        <!--<TabControl Grid.Row="0" MinWidth="200">
+          <TabItem
+            Header="Load"
+            IsSelected="False">
+          </TabItem>
+          <TabItem 
+            Header="Assemble"
+            IsSelected="False">
+          </TabItem>
+          <TabItem 
+            Header="Step"
+            IsSelected="False">
+          </TabItem>
+          <TabItem 
+            Header="Run"
+            IsSelected="False">
+          </TabItem>
+        </TabControl>-->
+          <AvalonEdit:TextEditor Name="Editor"
+                                  Background="Gray"
+                                  Margin="0"
+                                  Foreground="WhiteSmoke"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Hidden"
+                                  TextBlock.FontSize="{ Binding #settings_fontSize.Value }"
+                                  FontFamily="Roboto Mono"
+                                  FontWeight="{Binding #settings_fontWeight.Value}"
+                                  Grid.Row="1"
+                                  />
         
-        <TextBox Name="codeEditor" FontSize="15" Grid.Row="1"  AcceptsTab="True" TextWrapping="NoWrap" AcceptsReturn="True" FontFamily="Roboto Mono">
+        <!--<TextBox Text="{Binding acc}" Name="codeEditor" FontSize="15" Grid.Row="1"  AcceptsTab="True" TextWrapping="NoWrap" AcceptsReturn="True" FontFamily="Roboto Mono">
 
-        </TextBox>
+        </TextBox>-->
       </Grid>
 
     
@@ -202,16 +232,26 @@
           <Grid ColumnDefinitions="2*,*" >
             <TextBlock VerticalAlignment="Center">Number Base</TextBlock>
             <ComboBox Grid.Column="1" Name="displayBase_ComboBox" SelectionChanged="ComboBox_SelectionChanged">
-              <!--Populated in code-->
+              Populated in code
             </ComboBox>
             
           </Grid>
-          <Button Name="LoadFile_Button" IsEnabled="True">Load File</Button>
-          <StackPanel Orientation="Horizontal">
+          <Grid ColumnDefinitions="2*,*" >
             <TextBlock>Font Size</TextBlock>
-            <NumericUpDown Value="{Binding fontSize}"></NumericUpDown>
-          </StackPanel>
+            <NumericUpDown Grid.Column="1" Name="settings_fontSize" ValueChanged="settings_fontSize_changed" Value="20"></NumericUpDown>
+          </Grid>
 
+          <Grid ColumnDefinitions="2*,*" >
+            <TextBlock>Tool Tip Delay (ms)</TextBlock>
+            <NumericUpDown Grid.Column="1" Name="settings_toolTipDelay" ValueChanged="settings_toolTipDelay_changed" Value="2000"></NumericUpDown>
+          </Grid>
+
+          <Grid ColumnDefinitions="2*,*" >
+            <TextBlock>Font Weight</TextBlock>
+            <ComboBox Grid.Column="1" Name="settings_fontWeight" SelectionChanged="settings_fontWeight_changed" Items="">
+            </ComboBox>
+          </Grid>
+          
         </StackPanel>
         
       </TabItem>
@@ -227,7 +267,7 @@
     
     <Style Selector="Border.card">
       <Setter Property="CornerRadius" Value="18,18,18,18"></Setter>
-      <Setter Property="Background" Value="WhiteSmoke"/>
+      <!--<Setter Property="Background" Value="WhiteSmoke"/>-->
       <Setter Property="Margin" Value="5"></Setter>
       <Setter Property="BorderBrush" Value="Gray"></Setter>
       <Setter Property="BorderThickness" Value="0.5"></Setter>
@@ -266,7 +306,7 @@
       <Setter Property="BorderThickness" Value="0.5"></Setter>
       <Setter Property="CornerRadius" Value="100"></Setter>
       <Setter Property="Padding" Value="5"></Setter>
-      <Setter Property="Background" Value="White"></Setter>
+      <!--<Setter Property="Background" Value="White"></Setter>-->
       <Setter Property="VerticalAlignment" Value="Center"></Setter>
     </Style>
 
@@ -304,6 +344,49 @@
       <Setter Property="Margin" Value="5,0,5,0"></Setter>
     </Style>
     
-    
+    <Style Selector="Button.menuBarButton">
+      <Setter Property="FontSize" Value="15"></Setter>
+      <Setter Property="Padding" Value="10,0,10,0"></Setter>
+      <Setter Property="Foreground" Value="Gray"></Setter>
+      <Setter Property="Background" Value="Transparent"></Setter>
+      <Setter Property="BorderThickness" Value="0"></Setter>
+      
+    </Style>
+
+    <Style Selector="Button.menuBarButton:pressed">
+      <Setter Property="FontSize" Value="15"></Setter>
+      <Setter Property="Padding" Value="10,0,10,0"></Setter>
+      <Setter Property="Foreground" Value="Gray"></Setter>
+      <Setter Property="Background" Value="Red"></Setter>
+      <Setter Property="BorderThickness" Value="0"></Setter>
+
+    </Style>
+
+    <Style Selector="Border.PulseOrange">
+      <Style.Animations>
+        <Animation Duration="0:0:1">
+          <KeyFrame Cue="0%">
+            <Setter Property="Background" Value="Orange"/>
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="Background" Value="#282828"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="Border.Selected">
+      <Style.Animations>
+        
+        <Animation Duration="1:0:0">
+          <KeyFrame Cue="0%">
+            <Setter Property="Background" Value="Blue"/>
+          </KeyFrame>
+          
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+
   </Window.Styles>
 </Window>

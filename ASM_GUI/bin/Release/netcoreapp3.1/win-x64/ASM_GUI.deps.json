@@ -12,6 +12,7 @@
           "ASM": "1.0.0",
           "Avalonia": "0.10.0-preview5",
           "Avalonia.Desktop": "0.10.0-preview5",
+          "AvaloniaEdit": "0.10.0-preview1",
           "ReactiveUI": "11.5.35",
           "System.Reactive.Reference": "4.4.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "3.1.8"
@@ -1139,7 +1140,7 @@
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
           "System.Threading.Timer": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.1",
           "System.Xml.XDocument": "4.3.0"
         }
       },
@@ -1400,6 +1401,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Collections.Immutable/1.6.0": {},
       "System.ComponentModel.Annotations/4.5.0": {},
       "System.Console/4.3.0": {
         "dependencies": {
@@ -1973,7 +1975,7 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
-      "System.Xml.ReaderWriter/4.3.0": {
+      "System.Xml.ReaderWriter/4.3.1": {
         "dependencies": {
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
@@ -2005,7 +2007,7 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
+          "System.Xml.ReaderWriter": "4.3.1"
         }
       },
       "Tmds.DBus/0.7.0": {
@@ -2023,6 +2025,16 @@
       "ASM/1.0.0": {
         "runtime": {
           "ASM.dll": {}
+        }
+      },
+      "AvaloniaEdit/0.10.0-preview1": {
+        "dependencies": {
+          "Avalonia": "0.10.0-preview5",
+          "System.Collections.Immutable": "1.6.0",
+          "System.Xml.ReaderWriter": "4.3.1"
+        },
+        "runtime": {
+          "AvaloniaEdit.dll": {}
         }
       },
       "System.Reactive.Reference/4.4.0.0": {
@@ -2522,6 +2534,13 @@
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
     },
+    "System.Collections.Immutable/1.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+aL946rTSJyo4PqstwsVZ5RBfaxfkIx+nTMfpmaxzorqgifRJwndBZhXPWNWGJpys7cQ1/vCvilYN9ugM05JFA==",
+      "path": "system.collections.immutable/1.6.0",
+      "hashPath": "system.collections.immutable.1.6.0.nupkg.sha512"
+    },
     "System.ComponentModel.Annotations/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -2928,12 +2947,12 @@
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
-    "System.Xml.ReaderWriter/4.3.0": {
+    "System.Xml.ReaderWriter/4.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
-      "path": "system.xml.readerwriter/4.3.0",
-      "hashPath": "system.xml.readerwriter.4.3.0.nupkg.sha512"
+      "sha512": "sha512-fVU1Xp9TEOHv1neQDtcJ4hNfYJ1pjfXzKY3VFeiRZK6HTV4Af2Ihyvq1FkPLrL1hzZhXv7NTmowQnL5DgTzIKA==",
+      "path": "system.xml.readerwriter/4.3.1",
+      "hashPath": "system.xml.readerwriter.4.3.1.nupkg.sha512"
     },
     "System.Xml.XDocument/4.3.0": {
       "type": "package",
@@ -2950,6 +2969,11 @@
       "hashPath": "tmds.dbus.0.7.0.nupkg.sha512"
     },
     "ASM/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AvaloniaEdit/0.10.0-preview1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HbVfsBTbNpO4saEx6gn/s9B5/rDuyJqE14gcZFqxV8r97DtaSGgILhcswxCCkliLjFF0gy1FUcP5Q64wJlvCYg==",
+  "dgSpecHash": "qcgEB8fggJiXTMEPw/RNCMQwJ3r6aH8qBGMTPVHQYcgInrvoyy+vA0VPyqrZIDsCK7g2Hd/DBHHBJHWUoKK8Zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_GUI\\ASM_GUI.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\Blake\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
+    "C:\\Users\\Blake\\.nuget\\packages\\system.collections.immutable\\1.6.0\\system.collections.immutable.1.6.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
@@ -103,7 +104,7 @@
     "C:\\Users\\Blake\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\Blake\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
+    "C:\\Users\\Blake\\.nuget\\packages\\system.xml.readerwriter\\4.3.1\\system.xml.readerwriter.4.3.1.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Blake\\.nuget\\packages\\tmds.dbus\\0.7.0\\tmds.dbus.0.7.0.nupkg.sha512"
   ],

@@ -155,4 +155,7 @@ C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\runtimes\linux-
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libSkiaSharp.so
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\Assets\Fonts\RobotoMono-Italic-VariableFont_wght.ttf
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\Assets\Fonts\RobotoMono-VariableFont_wght.ttf
-C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\Assets\Fonts\RobotoMono-SemiBoldItalic.ttf
+C:\Users\Blake\source\repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\AvaloniaEdit.dll
+C:\Users\Blake\source\repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\AvaloniaEdit.pdb
+C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\Assets\Fonts\RobotoMonoSemiBoldItalic.ttf
+C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Debug\netcoreapp3.1\Assets\RobotoMonoRegular.ttf

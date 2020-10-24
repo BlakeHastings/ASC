@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ASM.Hardware_Components
 {
-    public class Machine : HardwareBase
+    public class Machine : MachineBase
     {
 
         public Action GetInput;
@@ -47,36 +47,36 @@ namespace ASM.Hardware_Components
 
         public Machine()
         {
-            supportedOpcodeInstructions.Add(new HLT().OPCODE, new HLT());
-            supportedOpcodeInstructions.Add(new LDA().OPCODE, new LDA());
-            supportedOpcodeInstructions.Add(new STA().OPCODE, new STA());
-            supportedOpcodeInstructions.Add(new ADD().OPCODE, new ADD());
-            supportedOpcodeInstructions.Add(new TCA().OPCODE, new TCA());
-            supportedOpcodeInstructions.Add(new BRU().OPCODE, new BRU());
-            supportedOpcodeInstructions.Add(new BIP().OPCODE, new BIP());
-            supportedOpcodeInstructions.Add(new BIN().OPCODE, new BIN());
-            supportedOpcodeInstructions.Add(new RWD().OPCODE, new RWD());
-            supportedOpcodeInstructions.Add(new WWD().OPCODE, new WWD());
-            supportedOpcodeInstructions.Add(new SHL().OPCODE, new SHL());
-            supportedOpcodeInstructions.Add(new SHR().OPCODE, new SHR());
-            supportedOpcodeInstructions.Add(new LDX().OPCODE, new LDX());
-            supportedOpcodeInstructions.Add(new STX().OPCODE, new STX());
-            supportedOpcodeInstructions.Add(new TIX().OPCODE, new TIX());
-            supportedOpcodeInstructions.Add(new TDX().OPCODE, new TDX());
+            supportedOpcodeInstructions.Add(new HLT(this).OPCODE, new HLT(this));
+            supportedOpcodeInstructions.Add(new LDA(this).OPCODE, new LDA(this));
+            supportedOpcodeInstructions.Add(new STA(this).OPCODE, new STA(this));
+            supportedOpcodeInstructions.Add(new ADD(this).OPCODE, new ADD(this));
+            supportedOpcodeInstructions.Add(new TCA(this).OPCODE, new TCA(this));
+            supportedOpcodeInstructions.Add(new BRU(this).OPCODE, new BRU(this));
+            supportedOpcodeInstructions.Add(new BIP(this).OPCODE, new BIP(this));
+            supportedOpcodeInstructions.Add(new BIN(this).OPCODE, new BIN(this));
+            supportedOpcodeInstructions.Add(new RWD(this).OPCODE, new RWD(this));
+            supportedOpcodeInstructions.Add(new WWD(this).OPCODE, new WWD(this));
+            supportedOpcodeInstructions.Add(new SHL(this).OPCODE, new SHL(this));
+            supportedOpcodeInstructions.Add(new SHR(this).OPCODE, new SHR(this));
+            supportedOpcodeInstructions.Add(new LDX(this).OPCODE, new LDX(this));
+            supportedOpcodeInstructions.Add(new STX(this).OPCODE, new STX(this));
+            supportedOpcodeInstructions.Add(new TIX(this).OPCODE, new TIX(this));
+            supportedOpcodeInstructions.Add(new TDX(this).OPCODE, new TDX(this));
         }
 
-        public void ExecuteCommand(Instruction instruction)
+        public void ExecuteCommand(AssembledInstruction instruction)
         {
             var hexOpCode = new Hex(Convert.ToInt32(instruction.Opcode, 2));
             if (supportedOpcodeInstructions.TryGetValue(hexOpCode, out var value))
-                value.Invoke(this,instruction);
+                value.Invoke();
             else
                 throw (new Exception("Unknown OpCode: " + hexOpCode));
         }
 
         public void Tick()
         {
-            ExecuteCommand(new Instruction(memory.GetAddress(memory.BufferIndex).ToString()));
+            ExecuteCommand(new AssembledInstruction(memory.GetAddress(memory.BufferIndex).ToString()));
         }
 
         public void EndProgram()

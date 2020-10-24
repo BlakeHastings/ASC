@@ -78,3 +78,5 @@ C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\obj\Release\netcoreapp3.1\ASM_GUI.cspro
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\obj\Release\netcoreapp3.1\ASM_GUI.dll
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\obj\Release\netcoreapp3.1\ASM_GUI.pdb
 C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\obj\Release\netcoreapp3.1\ASM_GUI.genruntimeconfig.cache
+C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Release\netcoreapp3.1\AvaloniaEdit.dll
+C:\Users\Blake\Source\Repos\ASM2\ASM_GUI\bin\Release\netcoreapp3.1\AvaloniaEdit.pdb

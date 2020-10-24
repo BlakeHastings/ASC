@@ -27,7 +27,7 @@ namespace ASM_GUI_Old
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Instruction instruction = new Instruction(instructionEntry_TextBox.Text);
+            AssembledInstruction instruction = new AssembledInstruction(instructionEntry_TextBox.Text);
             opCode_TextBox.Text = instruction.Opcode;
             extensionBit_TextBox.Text = instruction.Extension_Bit;
             indirectFlag_TextBox.Text = instruction.Indirect_Flag;

@@ -710,6 +710,15 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
+      "System.Collections.Immutable/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
       "System.ComponentModel.Annotations/4.5.0": {
         "type": "package",
         "compile": {
@@ -1646,7 +1655,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.Xml.ReaderWriter/4.3.0": {
+      "System.Xml.ReaderWriter/4.3.1": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1716,6 +1725,21 @@
         },
         "runtime": {
           "bin/placeholder/ASM.dll": {}
+        }
+      },
+      "AvaloniaEdit/0.10.0-preview1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Avalonia": "0.10.0-preview5",
+          "System.Collections.Immutable": "1.6.0",
+          "System.Xml.ReaderWriter": "4.3.1"
+        },
+        "compile": {
+          "bin/placeholder/AvaloniaEdit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AvaloniaEdit.dll": {}
         }
       }
     },
@@ -2559,6 +2583,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {
@@ -3473,7 +3506,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.Xml.ReaderWriter/4.3.0": {
+      "System.Xml.ReaderWriter/4.3.1": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3543,6 +3576,21 @@
         },
         "runtime": {
           "bin/placeholder/ASM.dll": {}
+        }
+      },
+      "AvaloniaEdit/0.10.0-preview1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Avalonia": "0.10.0-preview5",
+          "System.Collections.Immutable": "1.6.0",
+          "System.Xml.ReaderWriter": "4.3.1"
+        },
+        "compile": {
+          "bin/placeholder/AvaloniaEdit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AvaloniaEdit.dll": {}
         }
       }
     }
@@ -5247,6 +5295,29 @@
         "ref/xamarinwatchos10/_._",
         "system.collections.concurrent.4.3.0.nupkg.sha512",
         "system.collections.concurrent.nuspec"
+      ]
+    },
+    "System.Collections.Immutable/1.6.0": {
+      "sha512": "+aL946rTSJyo4PqstwsVZ5RBfaxfkIx+nTMfpmaxzorqgifRJwndBZhXPWNWGJpys7cQ1/vCvilYN9ugM05JFA==",
+      "type": "package",
+      "path": "system.collections.immutable/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Collections.Immutable.dll",
+        "lib/netstandard1.0/System.Collections.Immutable.xml",
+        "lib/netstandard1.3/System.Collections.Immutable.dll",
+        "lib/netstandard1.3/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
+        "system.collections.immutable.1.6.0.nupkg.sha512",
+        "system.collections.immutable.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.ComponentModel.Annotations/4.5.0": {
@@ -8305,10 +8376,10 @@
         "version.txt"
       ]
     },
-    "System.Xml.ReaderWriter/4.3.0": {
-      "sha512": "GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
+    "System.Xml.ReaderWriter/4.3.1": {
+      "sha512": "fVU1Xp9TEOHv1neQDtcJ4hNfYJ1pjfXzKY3VFeiRZK6HTV4Af2Ihyvq1FkPLrL1hzZhXv7NTmowQnL5DgTzIKA==",
       "type": "package",
-      "path": "system.xml.readerwriter/4.3.0",
+      "path": "system.xml.readerwriter/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8373,7 +8444,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.xml.readerwriter.4.3.0.nupkg.sha512",
+        "system.xml.readerwriter.4.3.1.nupkg.sha512",
         "system.xml.readerwriter.nuspec"
       ]
     },
@@ -8466,6 +8537,11 @@
       "type": "project",
       "path": "../ASM_Library/ASM.csproj",
       "msbuildProject": "../ASM_Library/ASM.csproj"
+    },
+    "AvaloniaEdit/0.10.0-preview1": {
+      "type": "project",
+      "path": "../AvaloniaEdit/AvaloniaEdit.csproj",
+      "msbuildProject": "../AvaloniaEdit/AvaloniaEdit.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8473,6 +8549,7 @@
       "ASM >= 1.0.0",
       "Avalonia >= 0.10.0-preview5",
       "Avalonia.Desktop >= 0.10.0-preview5",
+      "AvaloniaEdit >= 0.10.0-preview1",
       "ReactiveUI >= 11.5.35"
     ]
   },
@@ -8511,6 +8588,9 @@
           "projectReferences": {
             "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj": {
               "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\ASM_Library\\ASM.csproj"
+            },
+            "C:\\Users\\Blake\\Source\\Repos\\ASM2\\AvaloniaEdit\\AvaloniaEdit.csproj": {
+              "projectPath": "C:\\Users\\Blake\\Source\\Repos\\ASM2\\AvaloniaEdit\\AvaloniaEdit.csproj"
             }
           }
         }

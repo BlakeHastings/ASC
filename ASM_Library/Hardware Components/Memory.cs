@@ -33,8 +33,16 @@ namespace ASM.Hardware_Components
 
         public void SetAddress(int decimalIndex, string hexValue)
         {
-            _mem[decimalIndex] = new Hex(hexValue);
-            AddressValueChanged?.Invoke(this,decimalIndex);
+            try
+            {
+                _mem[decimalIndex] = new Hex(hexValue);
+                AddressValueChanged?.Invoke(this, decimalIndex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void SetAddress(Hex index, string hexValue)

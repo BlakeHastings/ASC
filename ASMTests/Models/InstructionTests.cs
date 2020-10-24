@@ -12,13 +12,13 @@ namespace ASM.Models.Tests
         [TestMethod()]
         public void InstructionTest()
         {
-            Instruction[] instructions = {
-                new Instruction("6008"),
-                new Instruction("6008"),
-                new Instruction("0110000000001000")
+            AssembledInstruction[] instructions = {
+                new AssembledInstruction("6008"),
+                new AssembledInstruction("6008"),
+                new AssembledInstruction("0110000000001000")
             };
 
-            foreach (Instruction instruction in instructions)
+            foreach (AssembledInstruction instruction in instructions)
             {
                 Assert.IsTrue(instruction.Opcode == "0110");
                 Assert.IsTrue(instruction.Extension_Bit == "0");
@@ -27,12 +27,12 @@ namespace ASM.Models.Tests
                 Assert.IsTrue(instruction.Address == "00001000");
             }
 
-            instructions = new Instruction[]{
-                new Instruction("C109"),
-                new Instruction("1100000100001001")
+            instructions = new AssembledInstruction[]{
+                new AssembledInstruction("C109"),
+                new AssembledInstruction("1100000100001001")
             };
 
-            foreach (Instruction instruction in instructions)
+            foreach (AssembledInstruction instruction in instructions)
             {
                 Assert.IsTrue(instruction.Opcode == "1100");
                 Assert.IsTrue(instruction.Extension_Bit == "0");
