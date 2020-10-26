@@ -13,10 +13,10 @@ namespace ASM.Assembler.Symbols
             TokenString = tokenStack.Peek();
 
             if(Char.IsDigit(TokenString[0]) 
-                || TokenString[0]=='*'
-                || !TokenString.Contains(",")
-                || !TokenString.Contains("+")
-                || !TokenString.Contains("-")
+                || (TokenString[0] == '*')
+                || TokenString.Contains(",")
+                || TokenString.Contains("+")
+                || TokenString.Contains("-")
                 )
             {
                 args.Status = SymbolNodeStatus.Fail;

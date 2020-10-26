@@ -1,4 +1,5 @@
 ﻿using ASM.Assembler.Assembler_Instructions;
+using ASM.Assembler.Assembler_Instructions.Instructions;
 using ASM.Assembler.Models;
 using ASM.Assembler.Symbols;
 using ASM.Core;
@@ -21,6 +22,8 @@ namespace ASM.Assembler
         {
             foreach (var x in _supportedInstructions)
                 supportedInstructions.Add(x.MNEMONIC, x);
+
+            supportedInstructions.Add(new ORG(this).MNEMONIC,new ORG(this));
         }
 
         public Assembler(Dictionary<int,InstructionsBase> machineOpcodes, List<AssemblerInstruction> assemblerInstructions)
@@ -90,13 +93,18 @@ namespace ASM.Assembler
             var asmCodeLines = this.ParseLines(text);
 
 
-            SymbolNode symbolLogicTree = 
-                new SymbolNode() { 
-                    children = new List<SymbolNodeBase>() {
-                        new Label(),
-                        new Mnemonic(new List<InstructionsBase>(supportedInstructions.Values))
-                    }
-                };
+            SymbolNodeBase symbolLogicTree = 
+                new SymbolNode()
+                .Children(
+                    new Label().Children(
+                        new Mnemonic(new List<InstructionsBase>(supportedInstructions.Values)).Child(
+                            new Operand()
+                        )
+                    ),
+                    new Mnemonic(new List<InstructionsBase>(supportedInstructions.Values)).Child(
+                        new Operand()
+                    )
+                );
 
 
             foreach(string line in asmCodeLines)

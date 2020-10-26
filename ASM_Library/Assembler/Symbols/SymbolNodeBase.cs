@@ -30,7 +30,7 @@ namespace ASM.Assembler.Symbols
                 if (childArg.Status == SymbolNodeStatus.Pass)
                 {
                     TokenString = tokenStack.Pop();
-                    args.SymbolList.Push(this);
+                    args.SymbolList.Push(child);
                     return args;
                 }
 
@@ -57,6 +57,17 @@ namespace ASM.Assembler.Symbols
             return args;
 
 
+        }
+        
+        public SymbolNodeBase Children(params SymbolNodeBase[] args)
+        {
+            children.AddRange(args);
+            return this;
+        }
+        public SymbolNodeBase Child(params SymbolNodeBase[] args)
+        {
+            children.AddRange(args);
+            return this;
         }
     }
 }

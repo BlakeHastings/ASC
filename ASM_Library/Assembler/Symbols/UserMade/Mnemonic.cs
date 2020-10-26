@@ -9,6 +9,8 @@ namespace ASM.Assembler.Symbols
     {
         public override string Name { get; } = "Mnemonic";
 
+        public InstructionsBase MnemonicObj { get; private set; }
+
         List<InstructionsBase> supportedInstructions = new List<InstructionsBase>();
 
         public Mnemonic(List<InstructionsBase> supportedInstructions)
@@ -32,6 +34,8 @@ namespace ASM.Assembler.Symbols
             {
                 if(instruction.MNEMONIC == TokenString)
                 {
+                    MnemonicObj = instruction;
+                    args.SymbolList.Push(this);
                     args.Status = SymbolNodeStatus.Pass;
                     return base.InvokeChildren(args, tokenStack);
                 }

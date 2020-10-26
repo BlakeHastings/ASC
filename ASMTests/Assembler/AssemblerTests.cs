@@ -3,6 +3,8 @@ using ASM.Opcode_Instructions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using ASM.Hardware_Components;
+using ASM.Assembler.Assembler_Instructions;
+using ASM.Assembler.Assembler_Instructions.Instructions;
 
 namespace ASM.Assembler.Tests
 {
@@ -29,6 +31,10 @@ namespace ASM.Assembler.Tests
             supportedOpcodeInstructions.Add(new STX(new Machine()));
             supportedOpcodeInstructions.Add(new TIX(new Machine()));
             supportedOpcodeInstructions.Add(new TDX(new Machine()));
+
+            List<AssemblerInstruction> supportedAssemblerInstructions = new List<AssemblerInstruction>();
+            
+            
 
 
             Assembler assembler = new Assembler(supportedOpcodeInstructions);

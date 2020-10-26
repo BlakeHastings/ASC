@@ -10,20 +10,16 @@ namespace ASM.Assembler.Models
 {
     public class PreAssembledInstruction
     {
-        public string Label { get; private set; }
-        public string Mnemonic { get; private set; }
-        public string Operand { get; private set; }
-
         private Dictionary<string, InstructionsBase> supportedInstructions { get; }
 
-        public PreAssembledInstruction(string instructionString, Dictionary<string, InstructionsBase> supportedInstructions, SymbolNode symbolLogicTree)
+        public PreAssembledInstruction(string instructionString, Dictionary<string, InstructionsBase> supportedInstructions, SymbolNodeBase symbolLogicTree)
         {
             this.supportedInstructions = supportedInstructions;
 
             Parse(instructionString, symbolLogicTree);
         }
 
-        private void Parse(string instructionString, SymbolNode symbolLogicTree)
+        private void Parse(string instructionString, SymbolNodeBase symbolLogicTree)
         {
             var t = symbolLogicTree.Invoke(new SymbolNodeArgs(), new Stack<string>(instructionString.Trim().Split(' ').Reverse()));
         }

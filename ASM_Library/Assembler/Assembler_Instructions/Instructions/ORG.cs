@@ -9,7 +9,7 @@ namespace ASM.Assembler.Assembler_Instructions.Instructions
     public class ORG : AssemblerInstruction
     {
 
-        public override string MNEMONIC { get; } = "ADD";
+        public override string MNEMONIC { get; } = "ORG";
 
         public ORG(Assembler assembler) : base(assembler) { }
 
